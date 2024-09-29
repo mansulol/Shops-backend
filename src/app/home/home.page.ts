@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ShopService } from '../services/shop.service';
 
 @Component({
   selector: 'app-home',
@@ -7,21 +9,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  shops: Array<any> = [
-    {
-      marca: "Ford",
-      modelo: " F150 Raptor"
-    },
-    {
-      marca: "Toyota",
-      modelo: " Cammry"
-    },
-    {
-      marca: "Mercedes",
-      modelo: " CLK GTR"
-    }
-  ]
+  shops: any = []
 
-  constructor() {}
+  constructor( private router: Router, private shopService: ShopService ) {}
+
+  goToShopList(){
+    this.router.navigateByUrl("/shop-list")
+  }
 
 }

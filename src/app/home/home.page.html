@@ -14,13 +14,7 @@
   </ion-header>
 
   <div id="container">
-    <p>Hola holita esta es mi paginita</p>
-    <ion-button>Hacer algo</ion-button>
-
-    <ion-list>
-      <ion-item *ngFor="let s of shops">
-        <p> {{s.marca}}  {{s.modelo}} </p>
-      </ion-item>
-    </ion-list>
+    <p>Tiendas</p>
+    <ion-button (click)="goToShopList()" >Ir al listado de tiendas</ion-button>
   </div>
 </ion-content>

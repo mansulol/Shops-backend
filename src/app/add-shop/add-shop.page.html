@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>add-shop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">add-shop</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form  [formGroup]="shopForm" (ngSubmit)="createShop()">
+    <ion-item>
+      <ion-label position="float"> Brand </ion-label>
+      <ion-input formControlName="brand" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand')?.touched">
+      La marca es obligatoria
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="float"> Model </ion-label>
+      <ion-input formControlName="model" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('model')?.hasError('required') && getFormControl('model')?.touched">
+      El modelo es obligatoria
+    </ion-note>
+  </form>
+
+   <ion-button type="submit" [disabled]="!shopForm.valid"> Crear tienda  </ion-button>
+</ion-content>

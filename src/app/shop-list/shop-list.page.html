@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-header>
+        Listado de tiendas
+      </ion-header>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-list>
+      <!-- Para poder obtener el indice -->
+      <ion-item *ngFor="let s of shops; let i = index">
+        <ion-label> Marca: {{s.brand}} {{s.model}} </ion-label>
+        <ion-button (click)="goToDelete(s.id, i)" > Eliminar </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
